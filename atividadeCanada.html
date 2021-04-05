@@ -17,25 +17,41 @@
     <!--https://fonts.google.com/icons-->
     <!--https://www.w3schools.com/icons/bootstrap_icons_glyphicons.asp-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
+    <style> 
+      figure {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        animation: mymove 5s ;
+        animation-fill-mode: forwards;
+      }
+      
+      #figure {animation-timing-function: linear;
+        }
+      
+      @keyframes mymove {
+        from {left: -1000px;}
+        to {left: 150px;}
+      }
+      </style>
     
 
 </head>
 <body>
       <main>
-        <div class="menu-container">
+        <section class="menu-container">
           
           <input type="checkbox" id="openmenu" class="hamburger-checkbox">
           
           
-          <div class="hamburger-icon">
+          <section class="hamburger-icon">
             <label for="openmenu" >
               <span></span>
               <span></span>
               <span></span>
               <span></span>
             </label>    
-          </div>
+          </section>
         
           <div class="menu-pane">
         
@@ -110,16 +126,113 @@
               
             </nav>
           </div>
-          <div class="body-text">
-    <center><h1>Actividades/Pontos Turisticos &#128519;</h1></center>
+          <section class="body-text">
+                <center><h1>Actividades/Pontos Turisticos &#128519;</h1></center>
+
             <br>
             <br>
 
+            <figcaption class="texto_absolutoCanada">
+              <i class="material-icons" style="font-size:44px;color:rgb(238, 235, 45)">local_dining</i>
+              <b><i>  Gastronomia Local  </i></b>
+              <i class="material-icons" style="font-size:44px;color:rgb(238, 235, 45)">local_dining</i></figcaption>
+            <br>
             <center>
-                <legend align="center"><b>Restaurantes de Vancouver que deve experimentar</b></legend>
+            <legend align="center" style="font-size:22px;color:rgb(165, 33, 33)"> <b>Quando for a Vancouver, ha inumeros lugares fantasticos para conhecer e como a gastronomia local </b></legend>
+            </center>
+            <figure>
+              <img src="imagens/wafflesCanada(1).jpg"  class="relativoCanadaGastro1">
+              <figcaption class="texto_absolutoCanada1">
+              <details>
+
+              <summary>
+                Waffles
+            </summary>
+            
+            <p>
+              Tera que provar as fantasticas Waffles na   <i><a target="_blank" style="font-size:20px" href="https://www.tripadvisor.pt/Restaurant_Review-g154943-d3182463-Reviews-Nero_waffles-Vancouver_British_Columbia.html"> Nero waffles </a></i>
+            </p>
+          
+          </details>
+          </figcaption>
+            </figure>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+
+            <center>
+                <legend align="center"><b>Quando for a Vancouver, ha inumeros lugares fantasticos para conhecer e como a gastronomia local.</b></legend>
             <br>
             <br>
             <td><img src="imagens/wafflesCanada(1).jpg"></td>
+            
             <br>
             <br>
             Se gosta de Waffle, deve experimentar os Waffles da Nero Waffles, sera os melhores waffles que alguma vez ira comer,  <b><a target="_blank" href="https://www.tripadvisor.pt/Restaurant_Review-g154943-d3182463-Reviews-Nero_waffles-Vancouver_British_Columbia.html"> Link</a></b>
@@ -163,6 +276,28 @@
                 Podera fazer uma marcação para poder conhecer melhor a cidade de Vancouver <b><a target="_blank" href="https://www.tripadvisor.pt/AttractionProductReview-g154943-d11450219-Vancouver_City_Sightseeing_Tour_Granville_Island_Vancouver_Lookout-Vancouver_Briti.html"> Link</a></b>
 <br>
 <br>
+<p>mapa</p>
+
+<svg width="550" height="382">
+  <image href="imagens/mapaCanada.jpg" width="100%" height="100%">
+  </image>
+  <!--Portofino-->
+<a href="images/PortofinoSVG.jpg" target="fotosLink">
+<circle cx="410" cy="115" r="6" fill="red" />
+</a>
+<a href="images/catedral.jpg" target="fotosLink">
+<circle cx="280" cy="145" r="6" fill="red" /></a>
+<a href="images/piazzaDeFerrari.jpg" target="fotosLink">
+<circle cx="293" cy="95" r="6" fill="red" /></a>
+<a href="images/piazzaDeFerrari.jpg" target="fotosLink">
+  <circle cx="290" cy="173" r="6" fill="red" /></a>
+</svg>
+
+
+<br>
+<br>
+<br>
+
 <iframe src="https://www.google.com/maps/d/embed?mid=1wizrN9h1LNJqGPgfCjLOsSjYVxeETBIh&hl=pt-BR" width="640" height="480"></iframe>
 
 
@@ -184,17 +319,17 @@
                     <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Insira o seu e-mail">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="image" src="imagens/123.jpg" alt="Submit" width="48" height="32">
+                <input type="image" src="imagens/123.jpg" alt="Submit" width="48" height="50">
             </form>
       </footer> 
-      <div class="menu">
-        <div class="label">Siga-nos</div>
-        <div class="spacer"></div>
-        <div class="item"><span>Twitter</span></div>
-        <div class="item"><span>Instagram</span></div>
-        <div class="item"><span>Facebook</span></div>
+      <section class="menu">
+        <section class="label">Siga-nos</section>
+        <section class="spacer"></section>
+        <section class="item"><span>Twitter</span></section>
+        <section class="item"><span>Instagram</span></section>
+        <section class="item"><span>Facebook</span></section>
 
-      </div>
+      </section>
  
  
 </body>
