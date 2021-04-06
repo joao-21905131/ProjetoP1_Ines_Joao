@@ -1,6 +1,4 @@
-/* PARA PC */
-@media (min-width: 601px) {
-  header {
+ header {
     grid-area: header;
     display: flex;
     flex-direction: column;
@@ -57,8 +55,9 @@
     margin-left: auto;
     margin-right: auto;
   }
-  
-  
+/* PARA PC */
+@media (min-width: 501px) {
+ 
   body {
     display: grid;
     width: 100%;
@@ -66,8 +65,8 @@
     grid-template-rows: 150px 5fr 280px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "main header header"
-      "main header header"
+      "header main main"
+      "header main main"
       "footer footer footer";
   }
 
@@ -244,7 +243,7 @@ img.relativoCanadaInverno6 {
 img.relativoCanadaGastro1 {
   position: relative;
   top: 250px;
-  right: -700px;
+  right: -50px;
   width: 400px;
   height: 200px;
   border: 3px solid rgb(148, 0, 0);
@@ -253,20 +252,40 @@ figcaption.texto_absolutoCanada {
   font-size: 34px;
   position: relative;
   top: 220px;
-  right: -700px;
+  right: -500px;
   width: 800px;
   height: 50px;
   color: rgb(8, 5, 5);
 }
 figcaption.texto_absolutoCanada1 {
   font-size: 18px;
-  position: relative;
-  top: 260px;
-  right: -760px;
+  position: absolute;
+  top: 280px;
+  right: -280px;
   width: 800px;
   height: 50px;
   color: rgb(8, 5, 5);
 }
+
+
+img.relativoCanadaGastro2 {
+  position: relative;
+  top: 200px;
+  right: 310px;
+  width: 500px;
+  height: 300px;
+  border: 3px solid rgb(148, 0, 0);
+}
+figcaption.texto_GastroCanada2 {
+  font-size: 18px;
+  position: relative;
+  top: 460px;
+  right: -280px;
+  width: 800px;
+  height: 50px;
+  color: rgb(8, 5, 5);
+}
+
 /*
 Russia
 */
@@ -774,7 +793,7 @@ span {
 }
 
 /* Para Mobile */
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   header {
     grid-area: header;
     display: flex;
