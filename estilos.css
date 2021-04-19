@@ -1061,10 +1061,12 @@ main{
     grid-template-rows: 150px 5fr 100px;
     grid-template-columns: 10fr 10fr 1fr;
     grid-template-areas:
-      "header main main"
-      "header main main"
-      "footer footer footer"
-      "aside aside aside";
+      "header"
+      "header"
+      "main"
+      "main"
+      "footer"
+      "aside";
   }
 
   .tabelas{
