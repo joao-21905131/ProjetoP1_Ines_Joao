@@ -3,26 +3,28 @@
 <head>
   
   <!--definir exibicao da janela-->
-  <meta name="viewport" content="width=device-width,0<initial-scale<1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="stylesheet" href="estilos.css">
   <link rel="shortcut icon" type="image/x-icon" href="imagens/favicon.ico">
     <meta charset="UTF-8">
     <title>Agência de Viagem</title>
-    <meta name="author" content= "João Santos">
     <meta name="keywords" content="Destinos">
     <meta name="desciption" content="Descrição sobre uma cidade">
-    
-    <body style="background-color:rgb(235, 190, 107)"></body>
     <link href="https://www.w3schools.com/icons/bootstrap_icons_glyphicons.asp" rel="stylesheet">
     <!--https://fonts.google.com/icons-->
     <!--https://www.w3schools.com/icons/bootstrap_icons_glyphicons.asp-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
+  <style>
+    html{
+      background-image: url(imagens/fundo1.jpg);
+      height: 380%;
+    }
+  </style>
     
 
 </head>
 <body>
-      <main>
+      <header>
         <div class="menu-container">
           
           <input type="checkbox" id="openmenu" class="hamburger-checkbox">
@@ -40,6 +42,18 @@
           <div class="menu-pane">
         
             <nav>
+              <p></p>
+              <ul class="menu-links">
+              
+                <li><a href="###">Home &dtrif;</a>
+                  <span id="DC-info">
+                    <a href="index.html"><i class="material-icons" style="font-size:14px;color:red">home</i> Página principal </a>
+                    
+
+                   </span>
+                  </li>  
+                
+               </ul>
                 <p></p>
                 <ul class="menu-links">
               
@@ -80,7 +94,7 @@
                 
                 <ul class="menu-links">
                  
-                  <li><a href="###">Noruega &dtrif;</a>
+                  <li><a href="###">Lofoten &dtrif;</a>
                     <span id="DC-info">
                       <a href="marcarViagemNoruega.html"><i class="material-icons" style="font-size:14px;color:red">flight_takeoff</i> Marcação da viagem </a>
                       <p></p>
@@ -97,11 +111,9 @@
      <ul class="menu-links">
       <li><a href="###">Sobre nós &dtrif;</a>
         <span id="DC-info">
-            <a href="informacaoPagina.html"><i class="material-icons" style="font-size:14px;color:red">settings</i> informação </a>
+            <a href="comentario.html"><i class="material-icons" style="font-size:14px;color:red">question_answer</i> Comentários </a>
             <p></p>
-            <a href="comentario.html"><i class="material-icons" style="font-size:14px;color:red">question_answer</i> Comentarios </a>
-            <p></p>
-            <a href="estiloPagina.html"><i class="material-icons" style="font-size:14px;color:red">format_size</i> estilo do Website </a>
+            <a href="estiloPagina.html"><i class="material-icons" style="font-size:14px;color:red">style</i> Estilo do Website </a>
           </span></li>
   </ul>
   
@@ -110,17 +122,27 @@
                 
               </nav>
             </div>
+          </header>
+          <main>
           <div class="body-text">
             
 
-            <center><big><h1>Noruega &#128519;</h1></big></center>
+            <big><h1>Lofoten &#128519;</h1></big>
             <br>
             <br>
-
-            <center>
+            <p>Lofoten é um arquipélago localizado no círculo ártico do mar da Noruega, com milhares de ilhotas, muitas desabitadas e ligadas por pontes e estradas surreais.  
+              O slogan de turismo oficial da Noruega é “movido pela natureza”, e por isso não é surpresa que Lofoten seja um paraíso ao ar livre, especialmente nos meses de verão, quando pode haver sol até 24 horas, proporcionando infinitas oportunidades de realizar caminhadas e trilhos. 
+              Inúmeras enseadas e fiordes cobrem a paisagem escarpada, com imponentes paredes de rocha e enormes montanhas cobertas de neve pontuando a vista. Os picos íngremes também fornecem refúgio para muitas espécies de pássaros e outros animais selvagens, enquanto os mares são o lar de uma vida marinha diversa, incluindo orcas migratórias.
+              Lofoten é extraordinário não só por causa do inusitado sol da meia noite e as Auroras Boreais, mas também pelas paisagens surreais, pelas praias de areia branca e mar cristalino de aparência tropical, que nunca imaginaríamos existir tão a norte. 
+              </p>
+              <br>
+          </div>
+          <center>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/8P6c26DgOig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture " allowfullscreen ></iframe>
+            </center>
               
-
-              <table class="wikitable collapsible" style="font-size:90%;width:30%;border:0px;text-align:center;line-height:120%;">
+              <br>
+              <table class="tabelaNoruega" style="font-size:90%;width:30%;border:0px;margin: auto;text-align:center;line-height:120%;">
                 <tbody><tr>
                 <th colspan="15" style="background: #AB7F54; color: rgb(0, 0, 0);"><big>Troca para a moeda local</big>
                 </th></tr>
@@ -128,7 +150,7 @@
                 <tr>
                 <th style="background: #8B7F74; color: black;" style="background: #DDDDDD;" height="16">1,00 Euro
                 </th>
-                <th style="background: #DDDDDD;">10.3 Norwegian Krone
+                <th style="background: #DDDDDD;color: black;">10.3 Norwegian Krone
                 </th>
                 
                 <th style="background: #DDDDDD;">
@@ -137,7 +159,7 @@
                 <tr>
                   <th style="background: #8B7F74; color: black;" style="background: #DDDDDD;" height="16">1,00 United States Dollar
                   </th>
-                  <th style="background: #DDDDDD;">8.53 Norwegian Krone
+                  <th style="background: #DDDDDD;color: black;">8.53 Norwegian Krone
                   </th>
                   
                   <th style="background: #DDDDDD;">
@@ -146,7 +168,7 @@
                   <tr>
                     <th style="background: #8B7F74; color: black;" style="background: #DDDDDD;" height="16">1,00 Japanese Yen
                     </th>
-                    <th style="background: #DDDDDD;">0.077 Norwegian Krone
+                    <th style="background: #DDDDDD;color: black;">0.077 Norwegian Krone
                     </th>
                     
                     <th style="background: #DDDDDD;">
@@ -155,22 +177,23 @@
                     <tr>
                       <th style="background: #8B7F74; color: black;" style="background: #DDDDDD;" height="16">1,00 Russian Ruble
                       </th>
-                      <th style="background: #DDDDDD;">0.11 Norwegian Krone
+                      <th style="background: #DDDDDD;color: black;">0.11 Norwegian Krone
                       </th>
                       
                       <th style="background: #DDDDDD;">
                       </th>
                       </tr></tbody></table>
+              
+                    </center>
     
-    
-            </center>
+            
             <br>
             <br>
           
             <center>
               
-
-              <table class="wikitable collapsible" style="font-size:90%;width:40%;border:0px;text-align:center;line-height:120%;">
+              <div style="overflow-x:auto;">
+              <table class="tabelas"  >
                 <tbody><tr>
                 <th colspan="15" style="background: #AB7F54; color: rgb(0, 0, 0);"><big>Sol da Meia-Noite nas Ilhas Lofoten</big>
                 </th></tr>
@@ -187,25 +210,26 @@
                 </th>
                 </tr>
                 <tr>
-                  <th style="background: #DDDDDD;">Svolvaer
+                  <th style="background: #DDDDDD;color: black;">Svolvaer
                   </th>
-                  <th style="background: #DDDDDD;">28 de Maio
+                  <th style="background: #DDDDDD;color: black;">28 de Maio
                   </th>
-                  <th style="background: #DDDDDD;">14 de Julho
+                  <th style="background: #DDDDDD;color: black;">14 de Julho
                   </th>
                   
                   <th style="background: #DDDDDD;">
                   </th>
                  </tr></tbody></table>
     
-    
+                </section>
+                </div>
             </center>
             <br>
             <br>
             <center>
               
-
-            <table class="wikitable collapsible" style="font-size:90%;width:40%;border:0px;text-align:center;line-height:120%;">
+              <div style="overflow-x:auto;">
+            <table class="tabelas">
               <tbody><tr>
               <th colspan="15" style="background: #AB7F54; color: rgb(0, 0, 0);"><big>Noite Polar nas Ilhas Lofoten</big>
               </th></tr>
@@ -222,22 +246,23 @@
               </th>
               </tr>
               <tr>
-                <th style="background: #DDDDDD;">Svolvaer
+                <th style="background: #DDDDDD;color: black;">Svolvaer
                 </th>
-                <th style="background: #DDDDDD;">6 de Dezembro
+                <th style="background: #DDDDDD;color: black;">6 de Dezembro
                 </th>
-                <th style="background: #DDDDDD;">6 de Janeiro
+                <th style="background: #DDDDDD;color: black;">6 de Janeiro
                 </th>
                 
                 <th style="background: #DDDDDD;">
                 </th>
                </tr></tbody></table>
-  
+              </div>
   
           </center>
             <br>
             <br>
-<table class="wikitable collapsible" style="font-size:90%;width:100%;border:0px;text-align:center;line-height:120%;">
+            <div style="overflow-x:auto;">       
+<table  style="font-size:90%;width:100%;border:0px;text-align:center;line-height:120%;">
     <tbody><tr>
     <th colspan="15" style="background: #6688AA; color: white;"><big>Tabela Climática de Lofoten</big>
     </th></tr>
@@ -247,33 +272,33 @@
     <tr>
     <th style="background: #bebaba;" height="16">Mês
     </th>
-    <th style="background: #bebaba;">Jan
+    <th style="background: #bebaba;color: black;">Jan
     </th>
-    <th style="background: #bebaba;">Fev
+    <th style="background: #bebaba;color: black;">Fev
     </th>
-    <th style="background: #bebaba;">Mar
+    <th style="background: #bebaba;color: black;">Mar
     </th>
-    <th style="background: #bebaba;">Abr
+    <th style="background: #bebaba;color: black;">Abr
     </th>
-    <th style="background: #bebaba;">Mai
+    <th style="background: #bebaba;color: black;">Mai
     </th>
-    <th style="background: #bebaba;">Jun
+    <th style="background: #bebaba;color: black;">Jun
     </th>
-    <th style="background: #bebaba;">Jul
+    <th style="background: #bebaba;color: black;">Jul
     </th>
-    <th style="background: #bebaba;">Ago
+    <th style="background: #bebaba;color: black;">Ago
     </th>
-    <th style="background: #bebaba;">Set
+    <th style="background: #bebaba;color: black;">Set
     </th>
-    <th style="background: #DDDDDD;">Out
+    <th style="background: #DDDDDD;color: black;">Out
     </th>
-    <th style="background: #bebaba;">Nov
+    <th style="background: #bebaba;color: black;">Nov
     </th>
-    <th style="background: #bebaba;">Dez
+    <th style="background: #bebaba;color: black;">Dez
     </th>
-    <th style="background: #bebaba;">
+    <th style="background: #bebaba;color: black;">
     </th>
-    <th style="background: #bebaba;">Média
+    <th style="background: #bebaba;color: black;">Média
     </th></tr>
     <tr>
     <th height="16;">Média Máxima °C
@@ -343,31 +368,31 @@
     <tr>
     <th style="background: #bebaba;" height="16">Mês
     </th>
-    <th style="background: #bebaba;">Jan
+    <th style="background: #bebaba;color: black;">Jan
     </th>
-    <th style="background: #bebaba;">Fev
+    <th style="background: #bebaba;color: black;">Fev
     </th>
-    <th style="background: #bebaba;">Mar
+    <th style="background: #bebaba;color: black;">Mar
     </th>
-    <th style="background: #bebaba;">Abr
+    <th style="background: #bebaba;color: black;">Abr
     </th>
-    <th style="background: #bebaba;">Mai
+    <th style="background: #bebaba;color: black;">Mai
     </th>
-    <th style="background: #bebaba;">Jun
+    <th style="background: #bebaba;color: black;">Jun
     </th>
-    <th style="background: #bebaba;">Jul
+    <th style="background: #bebaba;color: black;">Jul
     </th>
-    <th style="background: #bebaba;">Ago
+    <th style="background: #bebaba;color: black;">Ago
     </th>
-    <th style="background: #bebaba;">Set
+    <th style="background: #bebaba;color: black;">Set
     </th>
-    <th style="background: #bebaba;">Out
+    <th style="background: #bebaba;color: black;">Out
     </th>
-    <th style="background: #bebaba;">Nov
+    <th style="background: #bebaba;color: black;">Nov
     </th>
-    <th style="background: #bebaba;">Dez
+    <th style="background: #bebaba;color: black;">Dez
     </th>
-    <th style="background: #bebaba;">
+    <th style="background: #bebaba;color: black;">
     </th>
     <th style="background: #bebaba;">Total
     </th></tr>
@@ -434,7 +459,8 @@
       <td style="background: #0050aa; color: black;">188
       </td></tr>
       <tr>
-    <th colspan="15" style="background: #bebaba;">Dados referentes aos séculos XIX, XX e XXI.
+      </div>
+    <th colspan="15" style="background: #bebaba;color: black;">Dados referentes aos séculos XIX, XX e XXI.
     </th></tr></tbody></table>
     <p><br clear="all" /></p><center>
     <table class="toc noprint" cellpadding="0" width="95%" cellspacing="2" style="align:center; text-align:center;clear:all;">
@@ -444,19 +470,21 @@
     <br>
     <br>
     <br>
-    <center><u><b><h3>Mapa de Lofoten</h3></b></u></center>
+    <u><b><h3>Mapa de Lofoten</h3></b></u>
     <br>
     <br>
-    <center>
+    
+    
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d758431.8106958382!2d12.794869044068117!3d68.20584723078342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45de3f6ae3f3e829%3A0x619c91674bfc3c5d!2sLofoten!5e0!3m2!1sen!2spt!4v1617490490192!5m2!1sen!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </center>
+    
+    <br>
+    
     <br>
     <br>
-    <br>
-    <center>
+   
               
 
-      <table class="wikitable collapsible" style="font-size:90%;width:50%;border:0px;text-align:center;line-height:120%;">
+      <table class="wikitable collapsible" style="font-size:90%;width:50%;margin: auto;border:0px;text-align:center;line-height:120%;">
         <tbody><tr>
         <th colspan="15" style="background: #AB7F54; color: rgb(0, 0, 0);"><big>Informações</big>
         </th></tr>
@@ -464,7 +492,7 @@
         <tr>
         <th style="background: #8B7F74; color: black;" style="background: #DDDDDD;" height="16">País
         </th>
-        <th style="background: #DDDDDD;">Noruega
+        <th style="background: #DDDDDD;color: black;">Noruega
         </th>
         
         <th style="background: #DDDDDD;">
@@ -473,7 +501,7 @@
         <tr>
           <th style="background: #8B7F74; color: black;" style="background: #DDDDDD;" height="16">Região
           </th>
-          <th style="background: #DDDDDD;">Lofoten
+          <th style="background: #DDDDDD;color: black;">Lofoten
           </th>
           
           <th style="background: #DDDDDD;">
@@ -482,7 +510,7 @@
           <tr>
             <th style="background: #8B7F74; color: black;" style="background: #DDDDDD;" height="16">População
             </th>
-            <th style="background: #DDDDDD;">24,500 hab.
+            <th style="background: #DDDDDD;color: black;">24,500 hab.
             </th>
             
             <th style="background: #DDDDDD;">
@@ -491,7 +519,7 @@
             <tr>
               <th style="background: #8B7F74; color: black;" style="background: #DDDDDD;" height="16">Linguas Oficiais
               </th>
-              <th style="background: #DDDDDD;">Norueguês
+              <th style="background: #DDDDDD;color: black;">Norueguês
               </th>
               
               <th style="background: #DDDDDD;">
@@ -500,7 +528,7 @@
               <tr>
                 <th style="background: #8B7F74; color: black;" style="background: #DDDDDD;" height="16">Fuso horário com Portugal
                 </th>
-                <th style="background: #DDDDDD;">+2 horas
+                <th style="background: #DDDDDD;color: black;">+2 horas
                 </th>
                 
                 <th style="background: #DDDDDD;">
@@ -509,35 +537,90 @@
             </tbody></table>
   
     </center>
+
     <br>
     <br>
     <br>
 
 </main>
+<aside>
+    <div class="contato">
+      <h4>Contacto</h4>
+      <br>
+   <p style="font-size:18px"> F: <a  href="tel:+351215123456">+351 215 123 456</a>
+   </p>  
+    <br>
+    <p style="font-size:18px">
+      T: <a  href="tel:+351963852741">+351 963 852 741</a>
+      </p>
+      <br>
+      <p>
+        &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+        <a class="email" href="mailto:viagemSemReturno@gmail.com">viagemSemReturno@gmail.com</a></p>
+      <br>
+    <a class="url" href="index.html">www.agenciaIdaSemVolta.pt</a>
+    </div>
+  
+      
+    <div class="inpe">
+      
+      <h4>Sobre nós</h4>
+      <br>
+      <section class="letraAside">
+      <a class="blank" style="float:left"  href="informacaoRussia.html">Moscovo</a>
+     
+      <a class="blank"   href="informcaoNoruega.html">Lofoten</a>
+      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+      <a class="blank" href="informacaoCanada.html">Vancouver</a>
+      <br>
+      
+      <a class="blank" href="comentario.html">Comenário</a>
+      &nbsp; &nbsp;&nbsp; &nbsp;
+      <a class="blank" href="estiloPagina.html">Estilo Página</a>
+      &nbsp; &nbsp;&nbsp; &nbsp;
+      <a class="blank" href="index.html">Página Principal</a>
+    </section>
+      <br>
+      
+      
+     
+      
+    
+    </div>
+
+    <div class="menu">
+      <hr>
+      <br><br>
+      <div class="label">Siga-nos</div>
+      <div class="spacer"></div>
+      <div class="item"><span>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instagram</span></div>
+      <div class="item"><span>Instagram</span></div>
+      <div class="item"><span>Facebook</span></div>
+    </div>
+
+    
+
+    
+
+
+    
+</aside>
 <footer>
   <form method="post" 
   action="mailto:a21905131@alunos.ulht.pt" enctype="text/plain">
   
       <p>
-         <i class="material-icons" style="font-size:36px;color:rgb(141, 217, 236)">email</i>
+         <i class="material-icons" style="font-size:34px;color:rgb(141, 217, 236)">email</i>
               &nbsp;&nbsp;&nbsp;Deseja receber as nossas ultimas ofertas 
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              Nome: <input type="text" name = "nome" placeholder="nome">
+              Nome: <input type="text" name = "nome" placeholder="nome" autofocus required >
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Insira o seu e-mail">
+          <input type="email" id="email" name="email" placeholder="Insira o seu e-mail" required >
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="image" src="imagens/123.jpg" alt="Submit" width="48" height="32">
+          <input type="image" src="imagens/123.jpg" alt="Submit" width="48" height="50">
       </form>
 </footer> 
-<div class="menu">
-  <div class="label">Siga-nos</div>
-  <div class="spacer"></div>
-  <div class="item"><span>Twitter</span></div>
-  <div class="item"><span>Instagram</span></div>
-  <div class="item"><span>Facebook</span></div>
-
-</div>
 
 
 </body>

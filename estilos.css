@@ -1,12 +1,116 @@
- header {
+.rotate:hover
+{
+    -webkit-transform: rotateZ(-30deg);
+    -ms-transform: rotateZ(-30deg);
+    transform: rotateZ(-30deg);
+}
+
+.tooltip {
+  text-decoration:none;
+  position:relative;
+}
+ 
+.tooltip span {
+  display:none;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  color:black;
+  background:white; 
+}
+ 
+.tooltip span img {
+  float:left ;
+  width: 33vw;
+  margin:0px 8px 8px 0;
+}
+ 
+.tooltip:hover span {
+  display:block;
+  position:absolute;
+  bottom: 0;
+  left:0;
+  z-index:1000;
+  max-width:50vw;
+  min-height:20vw;
+  border:1px solid black;
+  margin-bottom:0px;
+  margin-left:0px;
+  overflow:hidden;
+  padding:8px;
+}
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  justify-content: center;
+}
+table {
+  color: rgb(255, 255, 255);
+  
+}
+
+table thead {
+  background-image: linear-gradient(to right, rgb(255, 0, 0), brown);
+}
+
+table tbody {
+  background-image: linear-gradient(
+    to left,
+    rgb(7, 158, 196),
+    rgb(35, 91, 196)
+  );
+}
+
+
+
+
+  
+#figure {animation-timing-function: linear;
+}
+
+@keyframes mymove {
+from {left: -1000px;}
+to {left: 150px;}
+}
+
+/* PARA PC */
+@media (min-width: 501px) {
+ 
+  header {
     grid-area: header;
     display: flex;
-    flex-direction: column;
     align-items: stretch;
     background-color: #da532c;
-    position: fixed;
-    width: 100%;
+    padding-top: 15%; 
+    width: 0%;
+    text-align: center;  
+    
+  }
+main{
+    grid-area: main;
+    grid-column: 1/4;
     text-align: center;
+    background-color: rgb(180, 204, 248);
+    padding-top: 5%; 
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  figure {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+   
+  }
+  .layout {
+    display: inline-block;
+    flex-direction: row-reverse;
+    justify-content: center;
+    
   }
   
   nav {
@@ -18,22 +122,22 @@
   
   aside {
     grid-area: aside;
-    padding-top: 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #0099ff;
-    width: 400px;
-    text-align: center;
+    padding-top: 20px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #5292bd;
+    width: 100%;
+    text-align: left;
+    height: 250px;
   }
   footer{
-   
-    background-color: rgb(212, 129, 81);
+    background-color: #3a6581;
     color: white;
     font-weight: bold;
     width: 100%;
-    height: 115px;
+    height: 100%;
     text-align: center;
     grid-area: footer;
     display: flex;
@@ -43,33 +147,36 @@
     font-size: 16px;
     padding-top: 30px;
   }
-  main{
-    grid-area: main;
-    grid-column: 1 / span 2;
-    background-color: rgb(255, 255, 255);
-    text-align: center;
-    background-color: white;
-    padding-top: 5%;
-    
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-/* PARA PC */
-@media (min-width: 501px) {
- 
+  
+  
   body {
+
     display: grid;
     width: 100%;
     height: 100%;
-    grid-template-rows: 150px 5fr 280px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 150px 5fr 100px;
+    grid-template-columns: 10fr 10fr 1fr;
     grid-template-areas:
       "header main main"
       "header main main"
-      "footer footer footer";
+      "footer footer footer"
+      "aside aside aside";
   }
 
+  .tabelas{
+    font-size:90%;
+    width:40%;
+    border:0px;
+    line-height:120%;
+    margin: auto;
+  }
+  .body-text{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
   main ul {
     list-style-type: none;
   }
@@ -98,13 +205,6 @@
     animation-iteration-count: infinite;
   }
 
-  
-
-  aside p::first-letter {
-    font-size: 24px;
-    color: white;
-  }
-
   aside ul {
     list-style-type: none;
     line-height: 20px;
@@ -125,6 +225,225 @@
   }
 
 
+
+  .hamburger-icon {
+    position: absolute;
+    z-index: 1;
+    top: 5vh;
+    left: 5vw;
+    padding-bottom: 2vh;
+  }
+  
+  .hamburger-icon span {
+    height: 5px;
+    width: 40px;
+    background-color: rgb(3, 2, 2);
+    display: block;
+    margin: 5px 0px 5px 0px;
+    transition: 0.7s ease-in-out;
+    transform: none;
+  }
+  
+  
+  
+  #openmenu:checked ~ .menu-pane {
+    left: -8vw;
+    transform: translateX(-5vw);
+  }
+  
+  #openmenu:checked ~ .hamburger-icon span:nth-of-type(2) {
+    transform: translate(0%, 175%) rotate(-45deg);
+    background-color: rgb(2, 1, 1);
+  }
+  
+  #openmenu:checked ~ .hamburger-icon span:nth-of-type(3) {
+    transform: rotate(45deg);
+    background-color: rgb(0, 0, 0);
+  }
+  
+  #openmenu:checked ~ .hamburger-icon span:nth-of-type(1) {
+    opacity: 0;
+  }
+  
+  #openmenu:checked ~ .hamburger-icon span:nth-of-type(4) {
+    opacity: 0;
+  }
+  
+  div.menu-pane {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    transform: translateX(-105vw);
+    width: 55%;
+    height: 100%;
+    transition: 0.6s ease-in-out;
+    z-index: 1;
+
+  }
+  
+  .menu-pane p {
+    color: rgb(189, 189, 189);
+    font-size: 0em;
+  }
+  
+  .menu-pane nav {
+    padding: 25%;
+  }
+  
+  .menu-links li, a, span {
+        transition: 0.5s ease-in-out;
+  }
+  
+  .menu-pane ul {
+    padding: 12%;
+    display: block;
+  }
+  
+  .menu-pane li {
+    padding-top: 1px;
+    padding-bottom: 0.7px;
+    margin-left: 1px;
+      font-size: 10px;
+  }
+  
+  
+  .menu-pane li:first-child {
+    font-size: 20px;
+    margin-left: -10px;
+  }
+  
+  
+  .menu-links li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  
+  
+  .menu-links li:hover a {
+    color: #df0000;
+  }
+  
+  .menu-links li:first-child:hover a {
+    color: rgb(255, 255, 255);  
+    background-color: rgb(235, 190, 107);
+  }
+  
+  #QC-info {
+    background-color: rgb(235, 190, 107);
+      border: 2px solid;
+    border-color: rgb(235, 190, 107);
+  display: block;
+    opacity: 0;
+    
+  }
+  #DC-info {
+    background-color: rgb(235, 190, 107);
+      border: 2px solid;
+    border-color: rgb(235, 190, 107);
+  display: block;
+    opacity: 0;
+  }
+  
+  .menu-links li:first-child:hover #QC-info {
+  opacity: 1;
+  }
+  
+  .menu-links li:first-child:hover #DC-info {
+  opacity: 1;
+  }
+  
+  #DC-info {
+    background-color: rgb(235, 190, 107);
+      border: 0.2px solid;
+    border-color: rgb(235, 190, 107);
+  display: block;
+    opacity: 0;
+  }
+  
+  
+  .menu-links li:first-child a {
+    padding: 1px;
+  }
+  
+  
+  
+  input.hamburger-checkbox {
+    position: absolute;
+    z-index: 3;
+    top: 5vh;
+    left: 5vw;
+    width: 10vw;
+    opacity: 0;
+    height: 6vh;
+    
+  }
+  .contato {
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.8);
+    display: block;
+  }
+  .letraAside {
+    font-size: small;
+   
+    display:table-row-group;
+  }
+  .inpe {
+    
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.8);
+    display: block;
+    position: relative;
+    top: 10%;
+    right: -40%;
+    z-index: 1;
+    display:table-row-group;
+  }
+ 
+  .menu {
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    display: flexbox;
+    cursor: pointer;
+    pointer-events: none;
+    position: relative;
+    bottom: -60%;
+    right: -6%;
+   
+  }
+  .menu:hover {
+    pointer-events: all;
+  }
+  .label {
+    display: inline-block;
+    cursor: pointer;
+    pointer-events: all;
+  }
+  .spacer {
+    display: inline-block;
+    width: 80px;
+    margin-left: 15px;
+    margin-right: 15px;
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+  }
+  .spacer:before {
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid #ffffff;
+    height: 1px;
+    width: 0%;
+    transition: width 0.25s ease;
+    transition-delay: 0.7s;
+  }
+  .item {
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+    top: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease, top 0.5s ease;
+    transition-delay: 0;
+  }
 
   @keyframes example {
     25% {
@@ -173,553 +492,423 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column-reverse;
-    position: absolute;
+    position: relative;
     top: calc(1em + 5px);
     left: 0;
     background-color: #1d1d1d;
   }
 
+ 
+/*CANADA*/
+/*Fotos Canada*/
 
-}
-/*
-p::first-letter {
-  font-size: 34px;
-  color: #ff0000;
-}
 
-----Inicio das fotos natalicias de Vancouver
-*/
-img.relativoCanadaInverno1 {
+img.atividadeCanada1 {
   position: relative;
-  top: -1170px;
-  right: -165px;
-  width: 600px;
-  height: 300px;
+  top: 150px;
+  right: -70px;
   border: 3px solid rgb(0, 0, 0);
 }
-img.relativoCanadaInverno2 {
+img.atividadeCanada2 {
   position: relative;
-  top: -850px;
+  top: -50px;
+  right: 400px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeCanada3 {
+  position: relative;
+  top: -100px;
   right: -100px;
-  width: 550px;
-  height: 250px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeCanada4 {
+  position: relative;
+  top: -220px;
+  right: 350px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeCanada5 {
+  position: relative;
+  top: 50px;
+  right: 400px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeCanada6 {
+  position: relative;
+  top: -50px;
+  right: -120px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeCanada7 {
+  position: relative;
+  top: -180px;
+  right: 450px;
   border: 3px solid rgb(0, 0, 0);
 }
-img.relativoCanadaInverno3 {
+img.atividadeCanada8 {
   position: relative;
-  top: -950px;
-  right: -180px;
-  width: 550px;
-  height: 300px;
-  border: 3px solid rgb(0, 0, 0);
+  top: -250px;
+  right: -120px;
+  border: 3px solid rgb(45, 96, 173);
 }
-img.relativoCanadaInverno4 {
+img.atividadeCanada9 {
   position: relative;
-  top: -1500px;
-  right: -480px;
+  top: -300px;
+  right:460px;
+  border: 3px solid rgb(7, 83, 7);
+}
+img.atividadeCanada10 {
+  position: relative;
+  top: -450px;
+  right: -150px;
+  border: 3px solid rgb(131, 170, 230);
+}
+
+figcaption.texto_GastronomiaLocalCanada {
+  font-size: 28px;
+  position: relative;
+  top: 100px;
+  right: -350px;
   width: 350px;
-  height: 200px;
-  border: 3px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
-img.relativoCanadaInverno5 {
+
+figcaption.texto_mapaCidadeCanada {
+  font-size: 30px;
   position: relative;
-  top: -580px;
-  right: -100px;
-  width: 550px;
-  height: 250px;
-  border: 3px solid rgb(0, 0, 0);
+  top: -200px;
+  right: 0px;
+  color: rgb(0, 0, 0);
 }
-img.relativoCanadaInverno6 {
+figcaption.texto_atividadeCidadeCanada {
+  font-size: 27px;
   position: relative;
-  top: -410px;
-  right: -110px;
-  width: 600px;
-  height: 300px;
-  border: 3px solid rgb(0, 0, 0);
+  top: -100px;
+  right: -300px;
+  width: 450px;
+
+  color: rgb(77, 26, 30);
 }
+/* */
 /*
-----Fim das fotos natalicias de Vancouver
+Noruega
 */
-img.relativoCanadaGastro1 {
+figcaption.texto_GastronomiaNoruega {
+  font-size: 28px;
   position: relative;
-  top: 250px;
-  right: -50px;
-  width: 400px;
-  height: 200px;
-  border: 3px solid rgb(148, 0, 0);
+  top: 100px;
+  right: -350px;
+  width: 350px;
+  color: rgb(0, 0, 0);
 }
-figcaption.texto_absolutoCanada {
-  font-size: 34px;
+figcaption.texto_AtividadeNoruega {
+  font-size: 27px;
   position: relative;
-  top: 220px;
-  right: -500px;
-  width: 800px;
-  height: 50px;
-  color: rgb(8, 5, 5);
-}
-figcaption.texto_absolutoCanada1 {
-  font-size: 18px;
-  position: absolute;
-  top: 280px;
-  right: -280px;
-  width: 800px;
-  height: 50px;
-  color: rgb(8, 5, 5);
+  top: -100px;
+  right: -300px;
+  width: 450px;
+
+  color: rgb(77, 26, 30);
 }
 
+figcaption.subtituloNoruega {
+  font-size: 28px;
+  position: relative;
+  top: 130px;
+  right: -470px;
+  width: 350px;
+  color: rgb(248, 3, 3);
+}
+.tabelaNoruega {
+  
+  text-align: center;
+  font-size:90%;
+  width:30%;
+  border:0px;
+  justify-content: center;
 
-img.relativoCanadaGastro2 {
-  position: relative;
-  top: 200px;
-  right: 310px;
-  width: 500px;
-  height: 300px;
-  border: 3px solid rgb(148, 0, 0);
+  line-height:120%;
 }
-figcaption.texto_GastroCanada2 {
-  font-size: 18px;
+/*Fotos Noruega*/
+img.atividadeNoruega1 {
   position: relative;
-  top: 460px;
-  right: -280px;
-  width: 800px;
-  height: 50px;
-  color: rgb(8, 5, 5);
+  top: 150px;
+  right: -70px;
+  border: 3px solid rgb(0, 0, 0);
 }
+img.atividadeNoruega2 {
+  position: relative;
+  top: -50px;
+  right: 400px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeNoruega3 {
+  position: relative;
+  top: -100px;
+  right: -100px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeNoruega4 {
+  position: relative;
+  top: -220px;
+  right: 350px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeNoruega5 {
+  position: relative;
+  top: 50px;
+  right: 400px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeNoruega6 {
+  position: relative;
+  top: -50px;
+  right: -120px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeNoruega7 {
+  position: relative;
+  top: -200px;
+  right: 450px;
+  border: 3px solid rgb(0, 0, 0);
+}
+img.atividadeNoruega8 {
+  position: relative;
+  top: -300px;
+  right: -120px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeNoruega9 {
+  position: relative;
+  top: -300px;
+  right:460px;
+  border: 3px solid rgb(7, 83, 7);
+}
+img.atividadeNoruega10 {
+  position: relative;
+  top: -450px;
+  right: -150px;
+  border: 3px solid rgb(131, 170, 230);
+}
+/* */
+
 
 /*
 Russia
 */
+figcaption.texto_atividadeRussia {
+  font-size: 25px;
+  position: relative;
+  top: -50px;
+  right: -320px;
+  width: 418px;
+
+  color: rgb(8, 5, 5);
+}
+
+/*Fotos Russia*/
+img.atividadeRussia1 {
+  position: relative;
+  top: 150px;
+  right: -70px;
+  border: 3px solid rgb(0, 0, 0);
+}
+img.atividadeRussia2 {
+  position: relative;
+  top: -50px;
+  right: 400px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeRussia3 {
+  position: relative;
+  top: -100px;
+  right: -100px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeRussia4 {
+  position: relative;
+  top: -220px;
+  right: 350px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeRussia5 {
+  position: relative;
+  top: 50px;
+  right: 400px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeRussia6 {
+  position: relative;
+  top: -130px;
+  right: -120px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeRussia7 {
+  position: relative;
+  top: -100px;
+  right: 450px;
+  border: 3px solid rgb(0, 0, 0);
+}
+img.atividadeRussia8 {
+  position: relative;
+  top: -280px;
+  right: -120px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeRussia9 {
+  position: relative;
+  top: -300px;
+  right:460px;
+  border: 3px solid rgb(7, 83, 7);
+}
+img.atividadeRussia10 {
+  position: relative;
+  top: -410px;
+  right: -150px;
+  border: 3px solid rgb(131, 170, 230);
+}
+/* */
+
 figcaption.texto_absolutoRussia {
   font-size: 34px;
   position: relative;
   top: 180px;
   right: -470px;
-  width: 800px;
+  width: 50px;
   height: 50px;
   color: rgb(8, 5, 5);
 }
-img.relativoRussiaGastro1 {
+.container div.photos {
   position: relative;
-  top: 250px;
-  right: -550px;
-  border: 3px solid rgb(148, 0, 0);
+  perspective: 1200px;
+  width: 40%;
+  display:inline-flex;
+  margin: 4.5%;
 }
-figcaption.texto_absolutoRussia1 {
-  font-size: 18px;
+
+.container div.photos figure {
   position: relative;
-  top: 250px;
-  right: -600px;
-  width: 350px;
-  height: 50px;
-  color: rgb(8, 5, 5);
+  transform-style: preserve-3d;
+  transition: 1s transform;
+  font-size: 1.6rem;
 }
-img.relativoRussiaGastro2 {
+
+.container div.photos figure img {
+  width: 100%;
+  height: auto;
+}
+
+.container  div.photos.flip-3d figure figcaption {
   position: absolute;
-  top: 150px;
-  right: 950px;
-  width: 500px;
-  height: 300px;
-  border: 3px solid rgb(148, 0, 0);
-}
-figcaption.texto_absolutoRussia2 {
-  font-size: 18px;
-  position: relative;
-  top: 470px;
-  right: 100px;
-  width: 5000px;
-  height: 50px;
-  color: rgb(8, 5, 5);
-}
-
-img.relativoRussiaGastro3 {
-  position: absolute;
-  top: 450px;
-  right: 450px;
-  width: 550px;
-  height: 350px;
-  border: 3px solid rgb(148, 0, 0);
-}
-figcaption.texto_absolutoRussia3 {
-  font-size: 18px;
-  position: relative;
-  top: 810px;
-  right: -350px;
-  width: 500px;
-  height: 50px;
-  color: rgb(8, 5, 5);
-}
-
-figcaption.texto_AtividadesRussia {
-  font-size: 34px;
-  position: relative;
-  top: 990px;
-  right: -350px;
-  width: 500px;
-  height: 50px;
-  color: rgb(41, 5, 141);
-}
-
-img.relativo_cosmoticRussia {
-  position: absolute;
-  top: 50px;
-  right: 350px;
-  width: 650px;
-  height: 450px;
-  border: 3px solid rgb(148, 0, 0);
-}
-figcaption.texto_cosmoticRussia {
-  font-size: 18px;
-  position: relative;
-  top: 520px;
-  right: -350px;
-  width: 500px;
-  height: 50px;
-  color: rgb(41, 5, 141);
-}
-img.relativo_trenoRussia {
-  position: absolute;
-  top: 550px;
-  right: 750px;
-  width: 550px;
-  height: 350px;
-  border: 3px solid rgb(148, 0, 0);
-}
-figcaption.texto_trenoRussia {
-  font-size: 18px;
-  position: relative;
-  top: 920px;
-  right: -120px;
-  width: 500px;
-  height: 50px;
-  color: rgb(41, 5, 141);
-}
-img.relativo_museuRussia {
-  position: absolute;
-  top: 950px;
-  right: 450px;
-  width: 550px;
-  height: 350px;
-  border: 3px solid rgb(148, 0, 0);
-}
-figcaption.texto_museuRussia {
-  font-size: 18px;
-  position: relative;
-  top: 1320px;
-  right: -320px;
-  width: 500px;
-  height: 50px;
-  color: rgb(41, 5, 141);
-}
-img.relativo_tankeRussia {
-  position: absolute;
-  top: 1350px;
-  right: 150px;
-  width: 550px;
-  height: 350px;
-  border: 3px solid rgb(148, 0, 0);
-}
-figcaption.texto_tankeRussia {
-  font-size: 18px;
-  position: relative;
-  top: 1720px;
-  right: -580px;
-  width: 500px;
-  height: 50px;
-  color: rgb(41, 5, 141);
-}
-img.relativo_cathedralRussia {
-  position: absolute;
-  top: 1250px;
-  right: 850px;
-  width: 550px;
-  height: 350px;
-  border: 3px solid rgb(148, 0, 0);
-}
-figcaption.texto_cathedralRussia {
-  font-size: 18px;
-  position: relative;
-  top: 1620px;
-  right: 80px;
-  width: 500px;
-  height: 50px;
-  color: rgb(41, 5, 141);
-}
-
-/*
----- Inicio das fotos de verão de Vancouver e texto a indicar fotos que é fotos de verão
-*/
-figcaption.texto_absolutoMulti {
-  font-size: 18px;
-  position: relative;
-  top: -310px;
-  right: -300px;
-  width: 800px;
-  height: 50px;
-  color: rgb(8, 5, 5);
-}
-
-img.relativoCanadaVerao1 {
-  position: relative;
-  top: -300px;
-  right: -300px;
-  width: 600px;
-  height: 300px;
-  border: 3px solid rgb(0, 0, 0);
-}
-img.relativoCanadaVerao2 {
-  position: relative;
-  top: -100px;
-  right: 650px;
-  width: 500px;
-  height: 250px;
-  border: 3px solid rgb(0, 0, 0);
-}
-img.relativoCanadaVerao3 {
-  position: relative;
-  top: -200px;
-  right: -650px;
-  width: 650px;
-  height: 420px;
-  border: 3px solid rgb(0, 0, 0);
-}
-img.relativoCanadaVerao4 {
-  position: relative;
-  top: -130px;
-  right: 600px;
-  width: 550px;
-  height: 300px;
-  border: 3px solid rgb(0, 0, 0);
-}
-
-img.relativoCanadaVerao5 {
-  position: relative;
-  top: 50px;
-  right: -40px;
-  width: 550px;
-  height: 250px;
-  border: 3px solid rgb(0, 0, 0);
-}
-img.relativoCanadaVerao6 {
-  position: relative;
-  top: 80px;
-  right: -110px;
-  width: 450px;
-  height: 250px;
-  border: 3px solid rgb(0, 0, 0);
-}
-
-
-/*
-
-
-
-
-
-
-*/
-
-a:link{color:blue}
-a:visited{color:rgb(209, 21, 21)}
-a:hover{color:rgb(51, 207, 3)}
-a:active{color:darkblue}
-
-
-
-
-.hamburger-icon {
-  position: absolute;
-  z-index: 1;
-  top: 5vh;
-  left: 5vw;
-  padding-bottom: 2vh;
-}
-
-.hamburger-icon span {
-  height: 5px;
-  width: 40px;
-  background-color: rgb(214, 214, 214);
-  display: block;
-  margin: 5px 0px 5px 0px;
-  transition: 0.7s ease-in-out;
-  transform: none;
-}
-
-
-
-#openmenu:checked ~ .menu-pane {
-  left: -8vw;
-  transform: translateX(-5vw);
-}
-
-#openmenu:checked ~ .hamburger-icon span:nth-of-type(2) {
-  transform: translate(0%, 175%) rotate(-45deg);
-  background-color: rgb(255, 255, 255);
-}
-
-#openmenu:checked ~ .hamburger-icon span:nth-of-type(3) {
-  transform: rotate(45deg);
-  background-color: rgb(255, 255, 255);
-}
-
-#openmenu:checked ~ .hamburger-icon span:nth-of-type(1) {
-  opacity: 0;
-}
-
-#openmenu:checked ~ .hamburger-icon span:nth-of-type(4) {
-  opacity: 0;
-}
-
-div.menu-pane {
-  background-color: rgb(0, 0, 0);
-  position: absolute;
-  transform: translateX(-105vw);
-  width: 55%;
+  width: 100%;
   height: 100%;
-  transition: 0.6s ease-in-out;
+  top: 0;
+  transform: rotateY(.5turn) translateZ(1px);
+  background: rgba(255, 255, 255, 0.9);
+  font-size:large;
+  text-align: center;
+  padding-top: 25%;
+  opacity: 0.6;
+  transition: 1s .5s opacity;
 }
 
-.menu-pane p {
-  color: rgb(189, 189, 189);
-  font-size: 0em;
+.container div.photos.flip-3d:hover figure {
+  transform: rotateY(.5turn);
 }
 
-.menu-pane nav {
-  padding: 25%;
+.container  div.photos:hover figure figcaption {
+  opacity: 1;
 }
 
-.menu-links li, a, span {
-      transition: 0.5s ease-in-out;
+.container div.photos figure:after {
+  content: " ";
+  display: inline-flexbox;
+  height: 10vw;
+  width: 100%;
+  transform: rotateX(90deg);
+  background-image: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-.menu-pane ul {
-  padding: 12%;
-  display: block;
+@media screen and (max-width: 100vw) {
+  .container div#flip-3d {
+    perspective-origin: center top;
+  }
+  .container div#flip-3d figure {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 12vw;
+  }
+
+  .container div#flip-3d figure:last-child {
+    display: none;
+  }
 }
 
-.menu-pane li {
-  padding-top: 1px;
-  padding-bottom: 0.7px;
-  margin-left: 1px;
-    font-size: 10px;
+.container .shake img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
 }
 
-
-.menu-pane li:first-child {
-  font-size: 20px;
-  margin-left: -10px;
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+.container .flip img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
 
-.menu-links li a {
-  color: rgb(255, 255, 255);
+.container .flip_over img:hover {
+  border-radius:50%;
+}
+
+.container .zoom {
+  height: max-content; /* [1.1] Set it as per your need */
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+.container .zoom img {
+  transition: transform .5s ease;
+}
+
+.container .zoom:hover img {
+  transform: scale(1.5);
+}
+
+}
+
+a:link{
+  color:rgb(0, 0, 0);
+  text-decoration: none;
+}
+a:visited{
+  color:rgb(209, 21, 21);
+  text-decoration: none;
+}
+a:hover{
+  color:rgb(197, 106, 31);
+  text-decoration: underline;
+
+}
+a:active{
+  color:rgb(0, 0, 0);
   text-decoration: none;
 }
 
 
-.menu-links li:hover a {
-  color: #df0000;
-}
-
-.menu-links li:first-child:hover a {
-  color: rgb(255, 255, 255);  
-  background-color: rgb(235, 190, 107);
-}
-
-#QC-info {
-  background-color: rgb(235, 190, 107);
-    border: 2px solid;
-  border-color: rgb(235, 190, 107);
-display: block;
-  opacity: 0;
-  
-}
-#DC-info {
-  background-color: rgb(235, 190, 107);
-    border: 2px solid;
-  border-color: rgb(235, 190, 107);
-display: block;
-  opacity: 0;
-}
-
-.menu-links li:first-child:hover #QC-info {
-opacity: 1;
-}
-
-.menu-links li:first-child:hover #DC-info {
-opacity: 1;
-}
-
-#DC-info {
-  background-color: rgb(235, 190, 107);
-    border: 0.2px solid;
-  border-color: rgb(235, 190, 107);
-display: block;
-  opacity: 0;
-}
 
 
-.menu-links li:first-child a {
-  padding: 1px;
-}
-
-
-
-input.hamburger-checkbox {
-  position: absolute;
-  z-index: 3;
-  top: 5vh;
-  left: 5vw;
-  width: 10vw;
-  opacity: 0;
-  height: 6vh;
-}
-
-
-.menu {
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.8);
-  display: block;
-  cursor: pointer;
-  pointer-events: none;
-  position: relative;
-  bottom: -50px;
-  left: 20px;
-}
-.menu:hover {
-  pointer-events: all;
-}
-.label {
-  display: inline-block;
-  cursor: pointer;
-  pointer-events: all;
-}
-.spacer {
-  display: inline-block;
-  width: 80px;
-  margin-left: 15px;
-  margin-right: 15px;
-  vertical-align: middle;
-  cursor: pointer;
-  position: relative;
-}
-.spacer:before {
-  content: "";
-  position: absolute;
-  border-bottom: 1px solid #000000;
-  height: 1px;
-  width: 0%;
-  transition: width 0.25s ease;
-  transition-delay: 0.7s;
-}
-.item {
-  position: relative;
-  display: inline-block;
-  margin-right: 30px;
-  top: 10px;
-  opacity: 0;
-  transition: opacity 0.5s ease, top 0.5s ease;
-  transition-delay: 0;
-}
 span {
   transition: color 0.5s ease;
 }
@@ -797,126 +986,127 @@ span {
   header {
     grid-area: header;
     display: flex;
-    flex-direction: column;
     align-items: stretch;
     background-color: #da532c;
-    position: fixed;
-    width: 100%;
+    padding-top: 15%; 
+    width: 0%;
+    text-align: center;  
+    
   }
-
+main{
+    grid-area: main;
+    grid-column: 1/4;
+    text-align: center;
+    background-color: rgb(180, 204, 248);
+    padding-top: 5%; 
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  figure {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+   
+  }
+  .layout {
+    display: inline-block;
+    flex-direction: row-reverse;
+    justify-content: center;
+    
+  }
+  
   nav {
     grid-area: nav;
     background-color: #da532c;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
-
-  main {
-    grid-area: main;
-    background-color: rgb(255, 255, 255);
-    padding-top: 350px;
-    width: 100%;
-  }
+  
+  
   aside {
     grid-area: aside;
-    justify-content: center;
-    background-color: #da532c;
+    padding-top: 20px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #5292bd;
     width: 100%;
+    text-align: left;
+    height: 250px;
+  }
+  footer{
+    background-color: #3a6581;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+  }
+  footer p {
+    font-size: 16px;
+    padding-top: 30px;
+  }
+  
+  
+  body {
+
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 150px 5fr 100px;
+    grid-template-columns: 10fr 10fr 1fr;
+    grid-template-areas:
+      "header main main"
+      "header main main"
+      "footer footer footer"
+      "aside aside aside";
   }
 
-  iframe {
+  .tabelas{
+    font-size:90%;
+    width:40%;
+    border:0px;
+    line-height:120%;
+    margin: auto;
+  }
+  .body-text{
     width: 100%;
-    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
   }
-  footer {
-    grid-area: footer;
-    width: 100%;
-  }
-  body {
-    display: grid;
-    width: 100vw;
-    height: 100vh;
-    grid-template-columns: 100%;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-      "header"
-      "header"
-      "main"
-      "main"
-      "footer";
-    font-size: 5vw;
-    color: rgba(44, 43, 43, 0.986);
-  }
-  nav ul {
+  main ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
   }
-/*
+
+  section {
+    /*border-bottom: rgb(175, 4, 4) 1px solid;*/
+    line-height: 20px;
+  }
+
+  main section ul li a {
+    text-decoration: none;
+  }
 
   main ul li a:link {
-    color: #8f0e0e;
+    color: #000000;
   }
 
   main ul li a:visited {
-    color: #0b646449;
+    color: #0099ff;
   }
 
-  main ul li a:hover {
+  main ul li h2:hover {
     color: #000000;
     animation-name: example;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-  }
-
-  main ul li a:active {
-    color: #ff0000;
-  }
-  */
-
-  nav ul {
-    display: flex;
-    flex-direction: row;
-    padding: 15px 15px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  nav > ul > li ul {
-    display: none;
-  }
-  nav ul li {
-    display: inline;
-    position: relative;
-  }
-  nav a {
-    display: flex;
-    flex-direction: column;
-    padding: 15px 15px;
-    width: 100%;
-    text-decoration: none;
-    white-space: nowrap;
-    color: white;
-    border-top: solid salmon 2px;
-    border-bottom: solid salmon 2px;
-  }
-
-  nav a:hover {
-    background-color: #69c;
-  }
-
-  nav > ul li:hover > ul {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column-reverse;
-    position: absolute;
-    top: calc(1em + 55px);
-    left: 0;
-    background-color: #1d1d1d;
-  }
-
-  aside p::first-letter {
-    font-size: 24px;
-    color: white;
   }
 
   aside ul {
@@ -933,4 +1123,747 @@ span {
     color: rgb(74, 62, 241);
     border-top: aqua 2px solid;
   }
+
+  aside ul a:hover {
+    background-color: #69c;
+  }
+
+
+
+  .hamburger-icon {
+    position: absolute;
+    z-index: 1;
+    top: 5vh;
+    left: 5vw;
+    padding-bottom: 2vh;
+  }
+  
+  .hamburger-icon span {
+    height: 5px;
+    width: 40px;
+    background-color: rgb(3, 2, 2);
+    display: block;
+    margin: 5px 0px 5px 0px;
+    transition: 0.7s ease-in-out;
+    transform: none;
+  }
+  
+  
+  
+  #openmenu:checked ~ .menu-pane {
+    left: -8vw;
+    transform: translateX(-5vw);
+  }
+  
+  #openmenu:checked ~ .hamburger-icon span:nth-of-type(2) {
+    transform: translate(0%, 175%) rotate(-45deg);
+    background-color: rgb(2, 1, 1);
+  }
+  
+  #openmenu:checked ~ .hamburger-icon span:nth-of-type(3) {
+    transform: rotate(45deg);
+    background-color: rgb(0, 0, 0);
+  }
+  
+  #openmenu:checked ~ .hamburger-icon span:nth-of-type(1) {
+    opacity: 0;
+  }
+  
+  #openmenu:checked ~ .hamburger-icon span:nth-of-type(4) {
+    opacity: 0;
+  }
+  
+  div.menu-pane {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    transform: translateX(-105vw);
+    width: 55%;
+    height: 100%;
+    transition: 0.6s ease-in-out;
+    z-index: 1;
+
+  }
+  
+  .menu-pane p {
+    color: rgb(189, 189, 189);
+    font-size: 0em;
+  }
+  
+  .menu-pane nav {
+    padding: 25%;
+  }
+  
+  .menu-links li, a, span {
+        transition: 0.5s ease-in-out;
+  }
+  
+  .menu-pane ul {
+    padding: 12%;
+    display: block;
+  }
+  
+  .menu-pane li {
+    padding-top: 1px;
+    padding-bottom: 0.7px;
+    margin-left: 1px;
+      font-size: 10px;
+  }
+  
+  
+  .menu-pane li:first-child {
+    font-size: 20px;
+    margin-left: -10px;
+  }
+  
+  
+  .menu-links li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  
+  
+  .menu-links li:hover a {
+    color: #df0000;
+  }
+  
+  .menu-links li:first-child:hover a {
+    color: rgb(255, 255, 255);  
+    background-color: rgb(235, 190, 107);
+  }
+  
+  #QC-info {
+    background-color: rgb(235, 190, 107);
+      border: 2px solid;
+    border-color: rgb(235, 190, 107);
+  display: block;
+    opacity: 0;
+    
+  }
+  #DC-info {
+    background-color: rgb(235, 190, 107);
+      border: 2px solid;
+    border-color: rgb(235, 190, 107);
+  display: block;
+    opacity: 0;
+  }
+  
+  .menu-links li:first-child:hover #QC-info {
+  opacity: 1;
+  }
+  
+  .menu-links li:first-child:hover #DC-info {
+  opacity: 1;
+  }
+  
+  #DC-info {
+    background-color: rgb(235, 190, 107);
+      border: 0.2px solid;
+    border-color: rgb(235, 190, 107);
+  display: block;
+    opacity: 0;
+  }
+  
+  
+  .menu-links li:first-child a {
+    padding: 1px;
+  }
+  
+  
+  
+  input.hamburger-checkbox {
+    position: absolute;
+    z-index: 3;
+    top: 5vh;
+    left: 5vw;
+    width: 10vw;
+    opacity: 0;
+    height: 6vh;
+    
+  }
+  .contato {
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.8);
+    display: block;
+  }
+  .letraAside {
+    font-size: small;
+   
+    display:table-row-group;
+  }
+  .inpe {
+    
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.8);
+    display: block;
+    position: relative;
+    top: 10%;
+    right: -40%;
+    z-index: 1;
+    display:table-row-group;
+  }
+ 
+  .menu {
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    display: flexbox;
+    cursor: pointer;
+    pointer-events: none;
+    position: relative;
+    bottom: -60%;
+    right: -6%;
+   
+  }
+  .menu:hover {
+    pointer-events: all;
+  }
+  .label {
+    display: inline-block;
+    cursor: pointer;
+    pointer-events: all;
+  }
+  .spacer {
+    display: inline-block;
+    width: 80px;
+    margin-left: 15px;
+    margin-right: 15px;
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+  }
+  .spacer:before {
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid #ffffff;
+    height: 1px;
+    width: 0%;
+    transition: width 0.25s ease;
+    transition-delay: 0.7s;
+  }
+  .item {
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+    top: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease, top 0.5s ease;
+    transition-delay: 0;
+  }
+
+  @keyframes example {
+    25% {
+      font-size: 20px;
+      justify-content: stretch;
+    }
+    100% {
+      font-size: 20px;
+      justify-content: stretch;
+    }
+  }
+
+  main ul li a:active {
+    color: #ff0000;
+  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav > ul > li ul {
+    display: none;
+  }
+  nav ul li {
+    display: inline;
+    position: relative;
+  }
+  nav a {
+    display: inline-block;
+    padding: 15px 10px;
+    width: 120px;
+    text-decoration: none;
+    white-space: nowrap;
+    color: white;
+    border-top: solid salmon 2px;
+    border-bottom: solid salmon 2px;
+  }
+
+  nav a:hover {
+    background-color: #69c;
+  }
+
+  nav > ul li:hover > ul {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column-reverse;
+    position: relative;
+    top: calc(1em + 5px);
+    left: 0;
+    background-color: #1d1d1d;
+  }
+
+ 
+/*CANADA*/
+/*Fotos Canada*/
+
+
+img.atividadeCanada1 {
+  position: relative;
+  top: 150px;
+  right: -70px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(0, 0, 0);
+}
+img.atividadeCanada2 {
+  position: relative;
+  top: -50px;
+  right: 400px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeCanada3 {
+  position: relative;
+  top: -100px;
+  right: -100px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeCanada4 {
+  position: relative;
+  top: -220px;
+  right: 350px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeCanada5 {
+  position: relative;
+  top: 50px;
+  right: 400px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeCanada6 {
+  position: relative;
+  top: -50px;
+  right: -120px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeCanada7 {
+  position: relative;
+  top: -180px;
+  right: 450px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(0, 0, 0);
+}
+img.atividadeCanada8 {
+  position: relative;
+  top: -250px;
+  right: -120px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeCanada9 {
+  position: relative;
+  top: -300px;
+  right:460px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(7, 83, 7);
+}
+img.atividadeCanada10 {
+  position: relative;
+  top: -450px;
+  right: -150px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(131, 170, 230);
+}
+
+figcaption.texto_GastronomiaLocalCanada {
+  font-size: 15px;
+  position: relative;
+  top: 100px;
+  right: -350px;
+  width: 350px;
+  color: rgb(0, 0, 0);
+}
+
+figcaption.texto_mapaCidadeCanada {
+  font-size: 15px;
+  position: relative;
+  top: -200px;
+  right: 0px;
+  color: rgb(0, 0, 0);
+}
+figcaption.texto_atividadeCidadeCanada {
+  font-size: 15px;
+  position: relative;
+  top: -100px;
+  right: -300px;
+  width: 450px;
+
+  color: rgb(77, 26, 30);
+}
+/* */
+/*
+Noruega
+*/
+figcaption.texto_GastronomiaNoruega {
+  font-size: 15px;
+  position: relative;
+  top: 100px;
+  right: -350px;
+  width: 350px;
+  color: rgb(0, 0, 0);
+}
+figcaption.texto_AtividadeNoruega {
+  font-size: 15px;
+  position: relative;
+  top: -100px;
+  right: -300px;
+  width: 450px;
+
+  color: rgb(77, 26, 30);
+}
+
+figcaption.subtituloNoruega {
+  font-size: 28px;
+  position: relative;
+  top: 130px;
+  right: -470px;
+  width: 350px;
+  color: rgb(248, 3, 3);
+}
+.tabelaNoruega {
+  
+  text-align: center;
+  font-size:90%;
+  width:30%;
+  border:0px;
+  justify-content: center;
+
+  line-height:120%;
+}
+/*Fotos Noruega*/
+img.atividadeNoruega1 {
+  position: relative;
+  top: 150px;
+  right: -70px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(0, 0, 0);
+}
+img.atividadeNoruega2 {
+  position: relative;
+  top: -50px;
+  right: 400px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeNoruega3 {
+  position: relative;
+  top: -100px;
+  right: -100px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeNoruega4 {
+  position: relative;
+  top: -220px;
+  right: 350px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeNoruega5 {
+  position: relative;
+  top: 50px;
+  right: 400px;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeNoruega6 {
+  position: relative;
+  top: -50px;
+  right: -120px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeNoruega7 {
+  position: relative;
+  top: -200px;
+  right: 450px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(0, 0, 0);
+}
+img.atividadeNoruega8 {
+  position: relative;
+  top: -300px;
+  right: -120px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeNoruega9 {
+  position: relative;
+  top: -300px;
+  right:460px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(7, 83, 7);
+}
+img.atividadeNoruega10 {
+  position: relative;
+  top: -450px;
+  right: -150px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(131, 170, 230);
+}
+/* */
+
+
+/*
+Russia
+*/
+figcaption.texto_atividadeRussia {
+  font-size: 15px;
+  position: relative;
+  top: -50px;
+  right: -320px;
+  width: 418px;
+
+  color: rgb(8, 5, 5);
+}
+
+/*Fotos Russia*/
+img.atividadeRussia1 {
+  position: relative;
+  top: 150px;
+  right: -70px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(0, 0, 0);
+}
+img.atividadeRussia2 {
+  position: relative;
+  top: -50px;
+  right: 400px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeRussia3 {
+  position: relative;
+  top: -100px;
+  right: -100px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeRussia4 {
+  position: relative;
+  top: -220px;
+  right: 350px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeRussia5 {
+  position: relative;
+  top: 50px;
+  right: 400px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeRussia6 {
+  position: relative;
+  top: -130px;
+  right: -120px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeRussia7 {
+  position: relative;
+  top: -100px;
+  right: 450px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(0, 0, 0);
+}
+img.atividadeRussia8 {
+  position: relative;
+  top: -280px;
+  right: -120px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(45, 96, 173);
+}
+img.atividadeRussia9 {
+  position: relative;
+  top: -300px;
+  right:460px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(7, 83, 7);
+}
+img.atividadeRussia10 {
+  position: relative;
+  top: -410px;
+  right: -150px;
+  height: 50%;
+  width: 50%;
+  border: 3px solid rgb(131, 170, 230);
+}
+/* */
+
+figcaption.texto_absolutoRussia {
+  font-size: 34px;
+  position: relative;
+  top: 180px;
+  right: -470px;
+  width: 50px;
+  height: 50px;
+  color: rgb(8, 5, 5);
+}
+.container div.photos {
+  position: relative;
+  perspective: 1200px;
+  width: 40%;
+  display:inline-flex;
+  margin: 4.5%;
+}
+
+.container div.photos figure {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 1s transform;
+  font-size: 1.6rem;
+}
+
+.container div.photos figure img {
+  width: 100%;
+  height: auto;
+}
+
+.container  div.photos.flip-3d figure figcaption {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transform: rotateY(.5turn) translateZ(1px);
+  background: rgba(255, 255, 255, 0.9);
+  font-size:large;
+  text-align: center;
+  padding-top: 25%;
+  opacity: 0.6;
+  transition: 1s .5s opacity;
+}
+
+.container div.photos.flip-3d:hover figure {
+  transform: rotateY(.5turn);
+}
+
+.container  div.photos:hover figure figcaption {
+  opacity: 1;
+}
+
+.container div.photos figure:after {
+  content: " ";
+  display: inline-flexbox;
+  height: 10vw;
+  width: 100%;
+  transform: rotateX(90deg);
+  background-image: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+@media screen and (max-width: 100vw) {
+  .container div#flip-3d {
+    perspective-origin: center top;
+  }
+  .container div#flip-3d figure {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 12vw;
+  }
+
+  .container div#flip-3d figure:last-child {
+    display: none;
+  }
+}
+
+.container .shake img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.container .flip img:hover {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.container .flip_over img:hover {
+  border-radius:50%;
+}
+
+.container .zoom {
+  height: max-content; /* [1.1] Set it as per your need */
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+.container .zoom img {
+  transition: transform .5s ease;
+}
+
+.container .zoom:hover img {
+  transform: scale(1.5);
+}
+
+
+@media screen and (max-width: 100vw) {
+  .container div#flip-3d {
+    perspective-origin: center top;
+  }
+  .container div#flip-3d figure {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 12vw;
+  }
+
+  .container div#flip-3d figure:last-child {
+    display: none;
+  }
+  
+}
+
 }

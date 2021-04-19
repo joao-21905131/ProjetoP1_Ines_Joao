@@ -3,26 +3,28 @@
 <head>
   
   <!--definir exibicao da janela-->
-  <meta name="viewport" content="width=device-width,0<initial-scale<1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="stylesheet" href="estilos.css">
   <link rel="shortcut icon" type="image/x-icon" href="imagens/favicon.ico">
     <meta charset="UTF-8">
     <title>Agência de Viagem</title>
-    <meta name="author" content= "João Santos">
     <meta name="keywords" content="Destinos">
     <meta name="desciption" content="Descrição sobre uma cidade">
-    
-    <body style="background-color:rgb(235, 190, 107)"></body>
     <link href="https://www.w3schools.com/icons/bootstrap_icons_glyphicons.asp" rel="stylesheet">
     <!--https://fonts.google.com/icons-->
     <!--https://www.w3schools.com/icons/bootstrap_icons_glyphicons.asp-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
+  <style>
+    html{
+      background-image: url(imagens/fundo1.jpg);
+      height: 380%;
+    }
+  </style>
     
 
 </head>
 <body>
-      <main>
+      <header>
         <div class="menu-container">
           
           <input type="checkbox" id="openmenu" class="hamburger-checkbox">
@@ -40,6 +42,18 @@
           <div class="menu-pane">
         
             <nav>
+              <p></p>
+              <ul class="menu-links">
+              
+                <li><a href="###">Home &dtrif;</a>
+                  <span id="DC-info">
+                    <a href="index.html"><i class="material-icons" style="font-size:14px;color:red">home</i> Página principal </a>
+                    
+
+                   </span>
+                  </li>  
+                
+               </ul>
                 <p></p>
                 <ul class="menu-links">
               
@@ -80,7 +94,7 @@
                 
                 <ul class="menu-links">
                  
-                  <li><a href="###">Noruega &dtrif;</a>
+                  <li><a href="###">Lofoten &dtrif;</a>
                     <span id="DC-info">
                       <a href="marcarViagemNoruega.html"><i class="material-icons" style="font-size:14px;color:red">flight_takeoff</i> Marcação da viagem </a>
                       <p></p>
@@ -97,11 +111,9 @@
      <ul class="menu-links">
       <li><a href="###">Sobre nós &dtrif;</a>
         <span id="DC-info">
-            <a href="informacaoPagina.html"><i class="material-icons" style="font-size:14px;color:red">settings</i> informação </a>
+            <a href="comentario.html"><i class="material-icons" style="font-size:14px;color:red">question_answer</i> Comentários </a>
             <p></p>
-            <a href="comentario.html"><i class="material-icons" style="font-size:14px;color:red">question_answer</i> Comentarios </a>
-            <p></p>
-            <a href="estiloPagina.html"><i class="material-icons" style="font-size:14px;color:red">format_size</i> estilo do Website </a>
+            <a href="estiloPagina.html"><i class="material-icons" style="font-size:14px;color:red">style</i> Estilo do Website </a>
           </span></li>
   </ul>
   
@@ -110,54 +122,49 @@
                 
               </nav>
             </div>
+          </header>
+          <main>
           <div class="body-text">
             
-      
-
-            <h1>Agência Ida sem Volta &#128519;</h1>
-          
-            <h2>Marcação do voo</h2>
-          
+            <h1 style="color:rgb(34, 34, 34)">Marcação de Viagem para Canada </h1>
           
             <br>
             <br>
+          </div>
 
             
-                <legend align="center"><b>Identificação:</b></legend>
+                <legend style="font-size:28px;"><b> Marcação de voo: </b></legend>
             
                     
                 <br>
-                <i></i><a href="marcarViagemCanada.html"> só ida </a></i>
+                <a href="marcarViagemCanada.html">só ida </a>
                 &nbsp;&nbsp;&nbsp;
-                <i><a href="ida_e_voltaCanada.html"> Ida e volta </a></i>
+                <a href="ida_e_voltaCanada.html">Ida e volta</a>
+
                 <br>
                 <br>
-                <label for="date">Quando é que quer marcar a ida ? </label>
-                <input type="date" name="dateInserida" min="2020-05-02"> 
-                <br>
-                <br>
-                <label for="date">Quando é que quer marcar a volta ? </label>
-                <input type="date" name="dateInserida" min="2020-05-02"> 
-                <p>
-                </p>
-                <br>
-               
-                Indique por que companhia pretende viajar 
-                <select name="viagem">
-                  <option value="Tap">Tap</option>
-                  <option value="Air France">Air France</option>
-                  <option value="Avianca">Avianca</option>
-                  <option value="Easyjet">Easyjet</option>
-                  <option value="Raynar">Raynar</option>
-                  <option value="Air Canada">Air Canada</option>
-                  <option value="Emirates">Emirates</option>
-                  <option value="Qatar">Qatar</option>
-                </select>
-                <p>
-                </p>
-                <br>
-                Quantos adultos são? 
+
+                <label for="date"><b>1.</b> Quando é que quer marcar a ida? </label>
+                <input type="date" name="dateInserida" min="2020-05-02"><br><br> 
+                
+                <label for="date"><b>2.</b> Quando é que quer marcar a volta? </label>
+                <input type="date" name="dateInserida" min="2020-05-02"><br><br> 
+                
+                <label for="checkbox"><b>3.</b> A companhia pelo qual quer viajar?</label>
                   <select name="viagem">
+                    <option value="Tap">Tap</option>
+                    <option value="Air France">Air France</option>
+                    <option value="Avianca">Avianca</option>
+                    <option value="Easyjet">Easyjet</option>
+                    <option value="Raynair">Raynair</option>
+                    <option value="Air Canada">Air Canada</option>
+                    <option value="Emirates">Emirates</option>
+                    <option value="Qatar">Qatar</option>
+                  </select><br><br>
+                
+                
+                <label for="areas"><b>4.</b> Quantos adultos são?</label>
+                <select id="viagem" name="viagem">
                   <option value="adulto0">0</option>
                   <option value="adulto1">1</option>
                   <option value="adulto2">2</option>
@@ -166,29 +173,23 @@
                   <option value="adulto5">5</option>
                   <option value="adulto6">6</option>
                   <option value="adulto7">7</option>
-                </select>
-                <p>
-                </p>
-                <br>
-                Quantas crianças são? 
-                <select name="viagem">
+               </select><br><br>
+                
+               <label for="areas"><b>5.</b> Quantas crianças são?</label>
+                <select id="viagem" name="viagem">
                   <option value="crianca0">0</option>
                   <option value="crianca1">1</option>
                   <option value="crianca2">2</option>
                   <option value="crianca3">3</option>
                   <option value="crianca4">4</option>
-                  <option value="crianca5">5</option>                
-                </select>
-                <p>
-                </p>
-                <br>
-                Vai querer carro de alugar? 
+                  <option value="crianca5">5</option>
+               </select><br><br>
+                
+               <label for="areas"><b>6.</b> Vai querer carro de alugar?</label>
                 <input type="radio" value="op1" name="op">
                 <label for="op1">sim</label>
                 <input type="radio" value="op2" name="op">
                 <label for="op2">Nao</label>
-                <p>
-                </p>
                 <br>
                 <br>
                 <b><a target="_blank" href="https://www.europcar.pt/pt-pt"><img src="imagens/europcar.jpg"></a></b>
@@ -197,28 +198,25 @@
                 &nbsp;&nbsp;&nbsp;
                 <b><a target="_blank" href="https://www.hertz.pt/rentacar/reservation/"><img src="imagens/hertz.jpg"></a></b>
 
-                <p>
-                  
-                </p>
                 <br>
-                Vai querer voo direto?  
+                <br>
+                <label for="areas"><b>7.</b> Vai querer voo direto?</label>
                 <input type="radio" value="op1" name="op">
                 <label for="op1">sim</label>
                 <input type="radio" value="op2" name="op">
                 <label for="op2">Nao</label>
-                <p>
-                </p>
                 <br>
-                Em que classe quer viagar
+                <br>
+                <label for="areas"><b>8.</b> Em que classe quer viagar</label>
                 <select name="viagem">
                   <option value="Económica">Económica</option>
-                  <option value="executiva">executiva</option>
+                  <option value="executiva">Executiva</option>
                   <option value="1° classe">1° classe</option>
                 </select>
                 <p>
                 </p>
                 <br>
-                Onde deseja apanhar o avião
+                <label for="areas"><b>9.</b> Onde deseja apanhar o avião?</label>
                 <select name="viagem">
                   <option value="Aeroporto Sá Carneiro">Aeroporto Sá Carneiro</option>
                   <option value="Aeroporto Lisboa">Aeroporto Lisboa</option>
@@ -227,76 +225,134 @@
                   <option value="Aeroporto Zurich">Aeroporto Zurich</option>
                   <option value="Aeroporto Mulhouse">Aeroporto Mulhouse</option>
                   <option value="Aeroporto Marselha">Aeroporto Marselha</option>
+                  <br>
+                  
                 </select>
-                <br>
-                <br>
-                <br>
-            <p>
-              Podera fazer a marcação do hotel clicando na imagem e assim poderão ver mais imagens dos diferentes géneros de quartos
+              
               <br>
               <br>
               <br>
-            </p>
+
+            <div class="body-text"></div>
+            
+              <legend style="font-size:28px;"><b> Marcação de Hoteís: </b></legend>
+              <br>
+              <br>
+              <br>
+            </div>
          <center>
-            <b><a target="_blank" href="https://www.booking.com/hotel/ca/blue-horizon-hotel.pt-pt.html?aid=304085;label=moscow-VNgpw0FcyTq%2AEF6xnh3lnwS390163480041%3Apl%3Ata%3Ap12660%3Ap2%E2%82%AC4%3Aac%3Aap%3Aneg%3Afi%3Atiaud-1110454565467%3Akwd-169400284%3Alp20880%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YV19IumoQ3O5By_26qC5hM4;sid=82617558422f5b6cd933eddbcdf961e4;all_sr_blocks=36016901_308187532_2_0_0;checkin=2021-05-04;checkout=2021-05-06;dest_id=-575268;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=2;highlighted_blocks=36016901_308187532_2_0_0;hpos=2;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=36016901_308187532_2_0_0__37365;srepoch=1617363661;srpvid=47f45226a487012c;type=total;ucfs=1&#hotelTmpl"><img src="imagens/blueHotelCanada(1).jpg"></a></b>
+            <b><a target="_blank" href="https://www.booking.com/hotel/ca/blue-horizon-hotel.pt-pt.html?aid=304085;label=moscow-VNgpw0FcyTq%2AEF6xnh3lnwS390163480041%3Apl%3Ata%3Ap12660%3Ap2%E2%82%AC4%3Aac%3Aap%3Aneg%3Afi%3Atiaud-1110454565467%3Akwd-169400284%3Alp20880%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YV19IumoQ3O5By_26qC5hM4;sid=82617558422f5b6cd933eddbcdf961e4;all_sr_blocks=36016901_308187532_2_0_0;checkin=2021-05-04;checkout=2021-05-06;dest_id=-575268;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=2;highlighted_blocks=36016901_308187532_2_0_0;hpos=2;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=36016901_308187532_2_0_0__37365;srepoch=1617363661;srpvid=47f45226a487012c;type=total;ucfs=1&#hotelTmpl"><img src="imagens/blueHotelCanada(1).jpg"style="border-radius: 10px;"></a></b>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <p> Blue Horizon &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
           </p> 
           </center>
            <br>
            
-            <b><a target="_blank" href="https://www.booking.com/hotel/ca/ci-downtown-vancouver.pt-pt.html?aid=304085;label=moscow-VNgpw0FcyTq%2AEF6xnh3lnwS390163480041%3Apl%3Ata%3Ap12660%3Ap2%E2%82%AC4%3Aac%3Aap%3Aneg%3Afi%3Atiaud-1110454565467%3Akwd-169400284%3Alp20880%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YV19IumoQ3O5By_26qC5hM4;sid=82617558422f5b6cd933eddbcdf961e4;all_sr_blocks=7620003_215623628_2_0_0;checkin=2021-05-04;checkout=2021-05-06;dest_id=-575268;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=3;highlighted_blocks=7620003_215623628_2_0_0;hpos=3;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=7620003_215623628_2_0_0__30777;srepoch=1617363661;srpvid=47f45226a487012c;type=total;ucfs=1&#hotelTmpl"><img src="imagens/belmontHotelCanada(1).jpg"></a></b>
+            <b><a target="_blank" href="https://www.booking.com/hotel/ca/ci-downtown-vancouver.pt-pt.html?aid=304085;label=moscow-VNgpw0FcyTq%2AEF6xnh3lnwS390163480041%3Apl%3Ata%3Ap12660%3Ap2%E2%82%AC4%3Aac%3Aap%3Aneg%3Afi%3Atiaud-1110454565467%3Akwd-169400284%3Alp20880%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YV19IumoQ3O5By_26qC5hM4;sid=82617558422f5b6cd933eddbcdf961e4;all_sr_blocks=7620003_215623628_2_0_0;checkin=2021-05-04;checkout=2021-05-06;dest_id=-575268;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=3;highlighted_blocks=7620003_215623628_2_0_0;hpos=3;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=7620003_215623628_2_0_0__30777;srepoch=1617363661;srpvid=47f45226a487012c;type=total;ucfs=1&#hotelTmpl"><img src="imagens/belmontHotelCanada(1).jpg"style="border-radius: 10px;"></a></b>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <b><a target="_blank" href="https://www.booking.com/hotel/ca/vancouver-times-square-suites.pt-pt.html?aid=304085;label=moscow-VNgpw0FcyTq%2AEF6xnh3lnwS390163480041%3Apl%3Ata%3Ap12660%3Ap2%E2%82%AC4%3Aac%3Aap%3Aneg%3Afi%3Atiaud-1110454565467%3Akwd-169400284%3Alp20880%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YV19IumoQ3O5By_26qC5hM4;sid=82617558422f5b6cd933eddbcdf961e4;all_sr_blocks=2237609_285390841_0_0_0;checkin=2021-05-04;checkout=2021-05-06;dest_id=-575268;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=7;highlighted_blocks=2237609_285390841_0_0_0;hpos=7;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=2237609_285390841_0_0_0__40778;srepoch=1617363661;srpvid=47f45226a487012c;type=total;ucfs=1&#hotelTmpl"><img src="imagens/timesSquareSuitesHotelCanada(1).jpg"></a></b>
+            <b><a target="_blank" href="https://www.booking.com/hotel/ca/vancouver-times-square-suites.pt-pt.html?aid=304085;label=moscow-VNgpw0FcyTq%2AEF6xnh3lnwS390163480041%3Apl%3Ata%3Ap12660%3Ap2%E2%82%AC4%3Aac%3Aap%3Aneg%3Afi%3Atiaud-1110454565467%3Akwd-169400284%3Alp20880%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YV19IumoQ3O5By_26qC5hM4;sid=82617558422f5b6cd933eddbcdf961e4;all_sr_blocks=2237609_285390841_0_0_0;checkin=2021-05-04;checkout=2021-05-06;dest_id=-575268;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=7;highlighted_blocks=2237609_285390841_0_0_0;hpos=7;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=2237609_285390841_0_0_0__40778;srepoch=1617363661;srpvid=47f45226a487012c;type=total;ucfs=1&#hotelTmpl"><img src="imagens/timesSquareSuitesHotelCanada(1).jpg"style="border-radius: 10px;"></a></b>
             <p>
                Belmont Vancouver   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
                Times Square Suites              
             </p>      
             <br>
             
-            <b><a target="_blank" href="https://www.booking.com/hotel/ca/sheraton-vancouver-wall-centre.pt-pt.html?aid=304085;label=moscow-VNgpw0FcyTq%2AEF6xnh3lnwS390163480041%3Apl%3Ata%3Ap12660%3Ap2%E2%82%AC4%3Aac%3Aap%3Aneg%3Afi%3Atiaud-1110454565467%3Akwd-169400284%3Alp20880%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YV19IumoQ3O5By_26qC5hM4;sid=82617558422f5b6cd933eddbcdf961e4;all_sr_blocks=19109033_244785038_0_42_0;checkin=2021-05-04;checkout=2021-05-06;dest_id=-575268;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=9;highlighted_blocks=19109033_244785038_0_42_0;hpos=9;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=19109033_244785038_0_42_0__46794;srepoch=1617363661;srpvid=47f45226a487012c;type=total;ucfs=1&#hotelTmpl"><img src="imagens/sheratonHotelCanada(1).jpg"></a></b>
+            <b><a target="_blank" href="https://www.booking.com/hotel/ca/sheraton-vancouver-wall-centre.pt-pt.html?aid=304085;label=moscow-VNgpw0FcyTq%2AEF6xnh3lnwS390163480041%3Apl%3Ata%3Ap12660%3Ap2%E2%82%AC4%3Aac%3Aap%3Aneg%3Afi%3Atiaud-1110454565467%3Akwd-169400284%3Alp20880%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YV19IumoQ3O5By_26qC5hM4;sid=82617558422f5b6cd933eddbcdf961e4;all_sr_blocks=19109033_244785038_0_42_0;checkin=2021-05-04;checkout=2021-05-06;dest_id=-575268;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=9;highlighted_blocks=19109033_244785038_0_42_0;hpos=9;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=19109033_244785038_0_42_0__46794;srepoch=1617363661;srpvid=47f45226a487012c;type=total;ucfs=1&#hotelTmpl"><img src="imagens/sheratonHotelCanada(1).jpg"style="border-radius: 10px;"></a></b>
             &nbsp;&nbsp;&nbsp;
-            <b><a target="_blank" href="https://www.booking.com/hotel/ca/ywca.pt-pt.html?aid=304085;label=moscow-VNgpw0FcyTq%2AEF6xnh3lnwS390163480041%3Apl%3Ata%3Ap12660%3Ap2%E2%82%AC4%3Aac%3Aap%3Aneg%3Afi%3Atiaud-1110454565467%3Akwd-169400284%3Alp20880%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YV19IumoQ3O5By_26qC5hM4;sid=82617558422f5b6cd933eddbcdf961e4;all_sr_blocks=29068506_158413564_2_0_0;checkin=2021-05-04;checkout=2021-05-06;dest_id=-575268;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=25;highlighted_blocks=29068506_158413564_2_0_0;hpos=25;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=29068506_158413564_2_0_0__29025;srepoch=1617363661;srpvid=47f45226a487012c;type=total;ucfs=1&#hotelTmpl"><img src="imagens/YWCAHotelCanada(1).jpg"></a></b>
+            <b><a target="_blank" href="https://www.booking.com/hotel/ca/ywca.pt-pt.html?aid=304085;label=moscow-VNgpw0FcyTq%2AEF6xnh3lnwS390163480041%3Apl%3Ata%3Ap12660%3Ap2%E2%82%AC4%3Aac%3Aap%3Aneg%3Afi%3Atiaud-1110454565467%3Akwd-169400284%3Alp20880%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YV19IumoQ3O5By_26qC5hM4;sid=82617558422f5b6cd933eddbcdf961e4;all_sr_blocks=29068506_158413564_2_0_0;checkin=2021-05-04;checkout=2021-05-06;dest_id=-575268;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=25;highlighted_blocks=29068506_158413564_2_0_0;hpos=25;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=29068506_158413564_2_0_0__29025;srepoch=1617363661;srpvid=47f45226a487012c;type=total;ucfs=1&#hotelTmpl"><img src="imagens/YWCAHotelCanada(1).jpg"style="border-radius: 10px;"></a></b>
             &nbsp;&nbsp;&nbsp;
-            <b><a target="_blank" href="https://www.booking.com/hotel/ca/gage-apartment-at-ubc.pt-pt.html?aid=304085;label=moscow-VNgpw0FcyTq%2AEF6xnh3lnwS390163480041%3Apl%3Ata%3Ap12660%3Ap2%E2%82%AC4%3Aac%3Aap%3Aneg%3Afi%3Atiaud-1110454565467%3Akwd-169400284%3Alp20880%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YV19IumoQ3O5By_26qC5hM4;sid=82617558422f5b6cd933eddbcdf961e4;all_sr_blocks=37231101_264015874_2_0_0;checkin=2021-05-04;checkout=2021-05-06;dest_id=-575268;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=70;highlighted_blocks=37231101_264015874_2_0_0;hpos=20;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=37231101_264015874_2_0_0__32832;srepoch=1617387928;srpvid=b46d818be1d401ef;type=total;ucfs=1&#hotelTmpl"><img src="imagens/gageTowersHotelCanada(1).jpg"></a></b>
+            <b><a target="_blank" href="https://www.booking.com/hotel/ca/gage-apartment-at-ubc.pt-pt.html?aid=304085;label=moscow-VNgpw0FcyTq%2AEF6xnh3lnwS390163480041%3Apl%3Ata%3Ap12660%3Ap2%E2%82%AC4%3Aac%3Aap%3Aneg%3Afi%3Atiaud-1110454565467%3Akwd-169400284%3Alp20880%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YV19IumoQ3O5By_26qC5hM4;sid=82617558422f5b6cd933eddbcdf961e4;all_sr_blocks=37231101_264015874_2_0_0;checkin=2021-05-04;checkout=2021-05-06;dest_id=-575268;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=70;highlighted_blocks=37231101_264015874_2_0_0;hpos=20;no_rooms=1;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=37231101_264015874_2_0_0__32832;srepoch=1617387928;srpvid=b46d818be1d401ef;type=total;ucfs=1&#hotelTmpl"><img src="imagens/gageTowersHotelCanada(1).jpg"style="border-radius: 10px;"></a></b>
             <p>
-              Sheraton Vancouver Wall Centre   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-              YWCA Hotel   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+              Sheraton Vancouver Wall Centre      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              YWCA Hotel     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
               Gage Apartments at UBC
               
             </p>
           
           </div>
         </div>
+        <br>
   </main>
-  <br>
-  <br>
-  <br>
-  <br>
-      <footer>
-        <form method="post" 
-        action="mailto:a21905131@alunos.ulht.pt" enctype="text/plain">
-        
-            <p>
-               <i class="material-icons" style="font-size:34px;color:rgb(141, 217, 236)">email</i>
-                    &nbsp;&nbsp;&nbsp;Deseja receber as nossas ultimas ofertas 
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    Nome: <input type="text" name = "nome" placeholder="nome">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Insira o seu e-mail">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="image" src="imagens/123.jpg" alt="Submit" width="48" height="32">
-            </form>
-      </footer> 
-      <div class="menu">
-        <div class="label">Siga-nos</div>
-        <div class="spacer"></div>
-        <div class="item"><span>Twitter</span></div>
-        <div class="item"><span>Instagram</span></div>
-        <div class="item"><span>Facebook</span></div>
+  
+  <aside>
+    <div class="contato">
+      <h4>Contacto</h4>
+      <br>
+   <p style="font-size:18px"> F: <a  href="tel:+351215123456">+351 215 123 456</a>
+   </p>  
+    <br>
+    <p style="font-size:18px">
+      T: <a  href="tel:+351963852741">+351 963 852 741</a>
+      </p>
+      <br>
+      <p>
+        &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+        <a class="email" href="mailto:viagemSemReturno@gmail.com">viagemSemReturno@gmail.com</a></p>
+      <br>
+    <a class="url" href="index.html">www.agenciaIdaSemVolta.pt</a>
+    </div>
+  
+      
+    <div class="inpe">
+      
+      <h4>Sobre nós</h4>
+      <br>
+      <section class="letraAside">
+      <a class="blank" style="float:left"  href="informacaoRussia.html">Moscovo</a>
+     
+      <a class="blank"   href="informcaoNoruega.html">Lofoten</a>
+      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+      <a class="blank" href="informacaoCanada.html">Vancouver</a>
+      <br>
+      
+      <a class="blank" href="comentario.html">Comenário</a>
+      &nbsp; &nbsp;&nbsp; &nbsp;
+      <a class="blank" href="estiloPagina.html">Estilo Página</a>
+      &nbsp; &nbsp;&nbsp; &nbsp;
+      <a class="blank" href="index.html">Página Principal</a>
+    </section>
+      <br>
+      
+      
+     
+      
+    
+    </div>
 
-      </div>
+    <div class="menu">
+      <hr>
+      <br><br>
+      <div class="label">Siga-nos</div>
+      <div class="spacer"></div>
+      <div class="item"><span>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instagram</span></div>
+      <div class="item"><span>Instagram</span></div>
+      <div class="item"><span>Facebook</span></div>
+    </div>
+
+    
+
+    
+
+
+    
+</aside>
+  <footer>
+    <form method="post" 
+    action="mailto:a21905131@alunos.ulht.pt" enctype="text/plain">
+    
+        <p>
+           <i class="material-icons" style="font-size:34px;color:rgb(141, 217, 236)">email</i>
+                &nbsp;&nbsp;&nbsp;Deseja receber as nossas ultimas ofertas 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Nome: <input type="text" name = "nome" placeholder="nome" autofocus required >
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Insira o seu e-mail" required >
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="image" src="imagens/123.jpg" alt="Submit" width="48" height="50">
+        </form>
+  </footer> 
+      
  
  
 </body>
